@@ -1,0 +1,259 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+body{
+    font-family: Verdana, sans-serif;
+    background: #2B2B2B;
+}
+
+.container{
+    position: relative;
+    margin: 30px auto;
+    width: 512.25px;
+    overflow: hidden;
+    background-color: #1A1A1A;
+}
+
+.cover{
+    position: relative;
+    width: 80%;
+    height: 100%;
+    text-align: center; 
+    margin: 5% 10% 5% 10%;
+}
+
+.promo{
+    position: absolute;
+    z-index: 1;
+    height: 131px;
+    width: 80%;
+    margin: 5% 10% 5% 10%;
+}
+
+.player-seekbar{
+    position: relative;
+    height: 7px;
+    background: #ffffff;
+    /*margin-bottom: 10px;*/
+}
+
+.player-seekbar:before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    display: inline-block;
+    height: 3px;
+    background: rgba(151,0,51,0.6);
+    margin-top: 2px;
+}
+
+.player-seekbar:after{
+    position: absolute;
+    content: '';
+    width: 50%;
+    display: inline-block;
+    height: 3px;
+    background: rgba(151,0,51,1);
+    margin-top: 2px;
+}
+
+/*.player-knot{
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 10px;
+    z-index: 9999;
+    border: 7px solid #444444;
+    background: #ffffff;
+    border-radius: 100%;
+    margin-top: -8.5px;
+    margin-left: 50%;
+    box-shadow: 3px 2px 5px rgba(0,0,0,0.3);
+}*/
+
+.album-info{
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+#artist-title{
+    display: block;
+    overflow: hidden;
+    font-size: 12px;
+    font-weight: bold;
+    padding-top: 10px;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: center;
+    
+}
+
+#song-title{
+    display: block;
+    overflow: hidden;
+    font-size: 12px;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: center;
+    
+}
+
+.current-duration, .total-duration{
+    position: relative;
+    font-size: 10px;
+    color: #ffffff;
+}
+.current-duration{
+    float: left;
+    padding: 5px 0 0 10px;
+}
+.total-duration{
+    float: right;
+    padding: 5px 10px 0 0;
+}
+
+.song-controls{
+    padding: 15px 15px;
+    overflow: auto;
+
+}
+
+.song-controls i{
+    width: 20%;
+    float: left;
+    display: block;
+    text-align: center;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.song-controls #play{
+    font-size: 28px;
+    margin-top: -5px;
+}
+
+.song-controls #pause{
+    font-size: 28px;
+    margin-top: -5px;
+}
+
+.song-controls #random{
+    float: left;
+    font-size: 10px;
+    margin-top: 4px;
+}
+
+.song-controls #clock{
+    float: right;
+    font-size: 10px;
+    margin-top: 4px;
+}
+
+
+#random, #clock{
+    position: relative;
+    color: #ffffff;
+}
+
+.fa:hover{
+    color: #6F6AA5;
+}
+
+#playlist {
+    position: relative;
+    overflow: hidden;
+    list-style-type: none;
+    font-size: 14px;
+    color: #ffffff;
+    box-shadow: inset 90px 10px 40px -10px rgba(0,0,0,0.1);
+    margin-top: 10px;
+}
+
+#playlist li:nth-child(even){
+    background: #141414;
+}
+
+#playlist li:nth-child(odd){
+    background: #222;
+}
+
+#playlist li {
+    cursor: pointer;
+    text-align: center;
+    padding: 10px 10px;
+}
+
+#playlist li:hover{
+    color: #6F6AA5;
+    text-shadow: 10px rgba(0,0,0,0.7);
+}
+
+#playlist li.active {
+    font-weight: bold;
+	color:#6F6AA5;
+}
+
+#ads-list{
+    display: none;
+}
+
+
+
+
+/* for smaller displays */
+@media only screen and (max-width: 700px) {
+    .container{
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width: 415px) {
+    #playlist{
+        font-size: 12px;
+        overflow: hidden;
+    }
+
+    .container{
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .song-controls #play{
+        font-size: 40px;
+        margin-top: -5px;
+    }
+    
+    .song-controls #pause{
+        font-size: 40px;
+        margin-top: -5px;
+    }
+
+    .song-controls #prev{
+        font-size: 40px;
+        margin-top: -5px;
+    }
+
+    .song-controls #next{
+        font-size: 40px;
+        margin-top: -5px;
+    }
+    
+    .song-controls #random{
+        font-size: 26px;
+        margin-top: 4px;
+    }
+    
+    .song-controls #clock{
+        font-size: 26px;
+        margin-top: 4px;
+    }
+
+    .promo{
+        height: 20%;
+    }
+    
+}
