@@ -25,13 +25,13 @@ body{
     margin: 5% 10% 5% 10%;
 }
 
-.promo{
+/*.promo{
     position: absolute;
     z-index: 1;
     height: 131px;
     width: 80%;
     margin: 5% 10% 5% 10%;
-}
+}*/
 
 .player-seekbar{
     position: relative;
