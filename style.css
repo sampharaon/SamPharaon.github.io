@@ -45,7 +45,7 @@ body{
     content: '';
     display: inline-block;
     height: 3px;
-    background: rgba(151,0,51,0.6);
+    background: #474747;
     margin-top: 2px;
 }
 
