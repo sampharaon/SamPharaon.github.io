@@ -21,7 +21,7 @@ body{
     position: relative;
     width: 80%;
     height: 100%;
-    text-align: center; 
+    text-align: center;
     margin: 5% 10% 5% 10%;
 }
 
@@ -50,10 +50,9 @@ body{
     margin-top: 2px;
 }
 
-.player-seekbar:after{
+.player-seekduration{
     position: absolute;
     content: '';
-    width: 50%;
     display: inline-block;
     height: 3px;
     background: rgba(151,0,51,1);
@@ -81,15 +80,15 @@ body{
 }
 
 #artist-title{
+    position: relative;
     display: block;
     overflow: hidden;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: bold;
     padding-top: 10px;
     color: #ffffff;
     text-transform: uppercase;
     text-align: center;
-    
 }
 
 #song-title{
@@ -99,7 +98,7 @@ body{
     color: #ffffff;
     text-transform: uppercase;
     text-align: center;
-    
+
 }
 
 .current-duration, .total-duration{
@@ -159,9 +158,9 @@ body{
     color: #ffffff;
 }
 
-.fa:hover{
+/*.fa:hover{
     color: #6F6AA5;
-}
+}*/
 
 #playlist {
     position: relative;
@@ -226,7 +225,7 @@ body{
         font-size: 40px;
         margin-top: -5px;
     }
-    
+
     .song-controls #pause{
         font-size: 40px;
         margin-top: -5px;
@@ -241,12 +240,12 @@ body{
         font-size: 40px;
         margin-top: -5px;
     }
-    
+
     .song-controls #random{
         font-size: 26px;
         margin-top: 4px;
     }
-    
+
     .song-controls #clock{
         font-size: 26px;
         margin-top: 4px;
@@ -255,5 +254,5 @@ body{
     .promo{
         height: 20%;
     }
-    
+
 }

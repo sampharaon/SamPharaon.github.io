@@ -12,16 +12,18 @@ function initAudio(element){
     var title = element.text();
     var cover = element.attr('cover');
     var artist = element.attr('artist');
+    var album = element.attr('album');
 
     //Create a New Audio Object
     audio = new Audio('media/' + song);
 
     if(!audio.currentTime){
-        $('#current-duration').html('0.00');
+        $('#current-duration').html('0:00');
+
     }
 
     $('.album-info .title').text(title);
-    $('.album-info .artist').text(artist);
+    $('.album-info .artist').text(artist, album);
 
     //Insert Cover Image
 	$('img.cover').attr('src','media/Covers/' + cover);
@@ -29,6 +31,7 @@ function initAudio(element){
     $('#playlist li').removeClass('active');
     element.addClass('active');
 }
+
 
 
 //Play Button
@@ -49,7 +52,7 @@ $('#pause').click(function(){
 
 //Stop Button
 //$('#n-stop').click(function(){
-//audio.pause();		
+//audio.pause();
 //audio.currentTime = 0;
 //$('#n-pause, #pause').hide();
 //$('#n-play, #play').show();
@@ -101,15 +104,21 @@ function showDuration(){
 		//Get hours and minutes
 		var s = parseInt(audio.currentTime % 60);
 		var m = parseInt((audio.currentTime / 60) % 60);
+    var ds = parseInt(audio.duration % 60);
+    var dm = parseInt((audio.duration / 60) % 60);
 		//Add 0 if seconds less than 10
 		if (s < 10) {
 			s = '0' + s;
 		}
-		$('#current-duration').html(m + '.' + s);	
+    if (ds < 10) {
+			ds = '0' + ds;
+		}
+		$('#current-duration').html(m + ':' + s);
 		var value = 0;
 		if (audio.currentTime > 0) {
 			value = Math.floor((100 / audio.duration) * audio.currentTime);
 		}
-		$('#player-seekbar:after').css('width',value+'%');
+    $('#total-duration').html(dm + ':' + ds);
+		$('#player-seekduration').css('width',value+'%');
 	});
 }
