@@ -40,10 +40,9 @@ body{
     /*margin-bottom: 10px;*/
 }
 
-.player-seekbar:before{
+.player-progressduration{
     position: absolute;
     content: '';
-    width: 100%;
     display: inline-block;
     height: 3px;
     background: rgba(151,0,51,0.6);

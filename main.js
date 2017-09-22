@@ -35,12 +35,11 @@ function initAudio(element){
 
 //Play Button
 $('#play').click(function(){
-
     audio.play();
-    
     $('#play').hide();
     $('#pause').show();
     $('#current-duration').fadeIn(400);
+    showBuff();
     showDuration();
 });
 
@@ -122,4 +121,13 @@ function showDuration(){
     $('#total-duration').html(dm + ':' + ds);
 		$('#player-seekduration').css('width',value+'%');
 	});
+}
+
+function showBuff(){
+  $(audio).bind('progress', function(){
+    if (audio.buffered > 0) {
+      buffValue = Math.floor((100/audio.duration) * audio.buffered);
+    }
+    $('#player-progressduration').css('width',buffValue+'%');
+  });
 }
