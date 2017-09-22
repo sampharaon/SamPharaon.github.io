@@ -12,7 +12,6 @@ function initAudio(element){
     var title = element.text();
     var cover = element.attr('cover');
     var artist = element.attr('artist');
-    var album = element.attr('album');
 
     //Create a New Audio Object
     audio = new Audio('media/' + song);
@@ -23,7 +22,7 @@ function initAudio(element){
     }
 
     $('.album-info .title').text(title);
-    $('.album-info .artist').text(artist, album);
+    $('.album-info .artist').text(artist);
 
     //Insert Cover Image
 	$('img.cover').attr('src','media/Covers/' + cover);
@@ -36,7 +35,9 @@ function initAudio(element){
 
 //Play Button
 $('#play').click(function(){
+
     audio.play();
+    
     $('#play').hide();
     $('#pause').show();
     $('#current-duration').fadeIn(400);

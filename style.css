@@ -55,7 +55,7 @@ body{
     content: '';
     display: inline-block;
     height: 3px;
-    background: rgba(151,0,51,1);
+    background: #000397;
     margin-top: 2px;
 }
 
