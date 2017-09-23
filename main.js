@@ -25,7 +25,7 @@ function initAudio(element){
     $('.album-info .artist').text(artist);
 
     //Insert Cover Image
-	//$('img.cover').attr('src','media/Covers/' + cover);
+	$('img.cover').attr('src','media/Covers/' + cover);
 
     $('#playlist li').removeClass('active');
     element.addClass('active');

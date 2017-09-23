@@ -81,7 +81,7 @@ body{
     position: relative;
     display: block;
     overflow: hidden;
-    font-size: 10px;
+    font-size: 16px;
     font-weight: bold;
     padding-top: 10px;
     color: #ffffff;
@@ -92,11 +92,11 @@ body{
 #song-title{
     display: block;
     overflow: hidden;
-    font-size: 12px;
+    font-size: 20px;
     color: #ffffff;
     text-transform: uppercase;
     text-align: center;
-
+    padding-bottom: 10px;
 }
 
 .current-duration, .total-duration{
@@ -129,7 +129,7 @@ body{
 }
 
 .song-menu{
-    padding: 10px 10px;
+    padding: 10px 40px;
     overflow: auto;
 }
 
@@ -255,38 +255,39 @@ body{
     }
 
     .song-controls #play{
-        font-size: 60px;
-        
+        font-size: 55px;
+        margin-top: -11px;
     }
 
     .song-controls #pause{
-        font-size: 60px;
-        margin-top: -10px;
+        font-size: 55px;
+        margin-top: -11px;
     }
 
     .song-controls #prev{
-        font-size: 45px;
+        font-size: 40px;
         margin-top: -5px;
     }
 
     .song-controls #next{
-        font-size: 45px;
+        font-size: 40px;
         margin-top: -5px;
     }
 
     .song-controls #random{
-        font-size: 21px;
+        font-size: 18px;
         margin-top: 10px;
     }
 
     .song-controls #repeat{
-        font-size: 21px;
+        font-size: 18px;
         margin-top: 10px;
     }
 
     .song-menu{
         display: flex;
         justify-content: space-around;
+        flex: 1;
     }
 
     .song-menu #playlist-button {
