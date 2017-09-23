@@ -75,7 +75,6 @@ body{
 .album-info{
     position: relative;
     overflow: hidden;
-    text-align: center;
 }
 
 #artist-title{
@@ -129,9 +128,32 @@ body{
     font-size: 20px;
 }
 
+.song-menu{
+    padding: 10px 10px;
+    overflow: auto;
+}
+
+.song-menu i {
+    width: 33.3%;
+    float: left;
+    display: block;
+    text-align: center;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.song-menu #playlist-button{
+    font-size: 10px;
+}
+
+.song-menu #menu-button {
+    font-size: 10px;
+}
+
+
 .song-controls #play{
     font-size: 28px;
-    margin-top: -5px;
+    margin-top: -10px;
 }
 
 .song-controls #pause{
@@ -145,14 +167,14 @@ body{
     margin-top: 4px;
 }
 
-.song-controls #clock{
+.song-controls #repeat{
     float: right;
     font-size: 10px;
     margin-top: 4px;
 }
 
 
-#random, #clock{
+#random, #repeat{
     position: relative;
     color: #ffffff;
 }
@@ -203,13 +225,8 @@ body{
 
 
 /* for smaller displays */
-@media only screen and (max-width: 700px) {
-    .container{
-        width: 75%;
-    }
-}
 
-@media only screen and (max-width: 415px) {
+@media only screen and (max-width: 700px) {
     #playlist{
         font-size: 12px;
         overflow: hidden;
@@ -220,38 +237,68 @@ body{
         margin-top: 0;
     }
 
+    .player{
+        height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .player-art{
+        max-height: 500px; 
+    }
+
+    .song-controls{
+        display: flex;
+        align-content: center;
+    }
+
     .song-controls #play{
-        font-size: 40px;
-        margin-top: -5px;
+        font-size: 60px;
+        
     }
 
     .song-controls #pause{
-        font-size: 40px;
-        margin-top: -5px;
+        font-size: 60px;
+        margin-top: -10px;
     }
 
     .song-controls #prev{
-        font-size: 40px;
+        font-size: 45px;
         margin-top: -5px;
     }
 
     .song-controls #next{
-        font-size: 40px;
+        font-size: 45px;
         margin-top: -5px;
     }
 
     .song-controls #random{
-        font-size: 26px;
-        margin-top: 4px;
+        font-size: 21px;
+        margin-top: 10px;
     }
 
-    .song-controls #clock{
-        font-size: 26px;
-        margin-top: 4px;
+    .song-controls #repeat{
+        font-size: 21px;
+        margin-top: 10px;
     }
 
-    .promo{
-        height: 20%;
+    .song-menu{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .song-menu #playlist-button {
+        font-size: 21px;
+        margin-left: 15px;
+        margin-bottom: 20px;
+    }
+
+    .song-menu #menu-button {
+        font-size: 21px;
+        margin-right: 15px;
+        margin-bottom: 20px;
     }
 
 }

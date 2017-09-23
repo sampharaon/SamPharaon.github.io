@@ -11,38 +11,45 @@
 <body>
 
     <div class="container">
-        <div class="player-art">
+        <div class="player">
+            <div class="player-art">
 
-            <div class="album-img">
-                <!--<img class="promo" src="media/Ads/ad.jpg">-->
-                <img class="cover" src="media/Covers/Cover.jpg">
-            </div>
+                <div class="album-img">
+                    <!--<img class="promo" src="media/Ads/ad.jpg">-->
+                    <img class="cover" src="media/Covers/Cover.jpg">
+                </div>
 
-            <div class="player-seekbar" id="player-seekbar">
-                <span class="player-seekduration" id="player-seekduration"></span>
-                <span class="player-progressduration" id="player-progressduration"></span>
-                <span class="player-knot" id="player-knot"></span>
             </div>
-        </div>
-        <div class="album-info">
-            <span class="current-duration" id="current-duration"></span>
-            <span class="total-duration" id="total-duration">0:00</span>
-            <br>
-            <span id="artist-title" class="artist">
-                artist
-            </span>
-            <span id="song-title" class="title">
-                title
-            </span>
-        </div>
-        <div class="song-controls">
+            <div class="album-info">
+                <div class="player-seekbar" id="player-seekbar">
+                    <span class="player-seekduration" id="player-seekduration"></span>
+                    <span class="player-progressduration" id="player-progressduration"></span>
+                    <span class="player-knot" id="player-knot"></span>
+                </div>
+                <span class="current-duration" id="current-duration"></span>
+                <span class="total-duration" id="total-duration">0:00</span>
+                <br>
+                <span id="artist-title" class="artist">
+                    artist
+                </span>
+                <span id="song-title" class="title">
+                    title
+                </span>
+            </div>
+            <div class="song-controls">
                 <i id="random" class="fa fa-random active"></i>
                 <i id="prev" class="fa fa-backward"></i>
                 <i id="play" class="fa fa-play"></i>
                 <i id="pause" class="fa fa-pause"></i>
                 <i id="next" class="fa fa-forward"></i>
-                <i id="clock" class="fa fa-clock-o active"></i>
+                <i id="repeat" class="fa fa-repeat active"></i>
+            </div>
+            <div class="song-menu">
+                <i id="playlist-button" class="fa fa-list aria-hidden="true""></i>
+                <i id="menu-button" class="fa fa-ellipsis-h aria-hidden="true""></i>
+            </div>
         </div>
+
         <div class="clearfix"></div>
             <ul id="playlist">
                 <li song="01. Ultralight Beam (Feat. Chance The Rapper, The-Dream, Kelly Price & Kirk Franklin).mp3" cover="cover.jpg" Artist="Kanye West">Ultralight Beam</li>

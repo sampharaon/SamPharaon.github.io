@@ -25,7 +25,7 @@ function initAudio(element){
     $('.album-info .artist').text(artist);
 
     //Insert Cover Image
-	$('img.cover').attr('src','media/Covers/' + cover);
+	//$('img.cover').attr('src','media/Covers/' + cover);
 
     $('#playlist li').removeClass('active');
     element.addClass('active');
@@ -50,18 +50,20 @@ $('#pause').click(function(){
     $('#play').show();
 });
 
-//Stop Button
-//$('#n-stop').click(function(){
-//audio.pause();
-//audio.currentTime = 0;
-//$('#n-pause, #pause').hide();
-//$('#n-play, #play').show();
-//$('#duration').fadeOut(400);
+//stop Button
+//$('#stop').click(function(){
+//   audio.pause();
+  //  audio.currentTime = 0;
+  //  $('#n-pause, #pause').hide();
+  //  $('#n-play, #play').show();
+  //  $('#duration').fadeOut(400);
+  //  $('#play').hide();
+  //  $('#pause').show();
 //});
 
 //Next Button
 $('#next').click(function(){
-audio.pause();
+    audio.pause();
     var next = $('#playlist li.active').next();
     if (next.length == 0) {
         next = $('#playlist li:first-child');
@@ -73,8 +75,8 @@ audio.pause();
     showDuration();
 });
 
-//Prev Button
-    $('#prev').click(function(){
+//Prev Button - to go to previous song
+$('#prev').click(function(){
     audio.pause();
     var prev = $('#playlist li.active').prev();
     if (prev.length == 0) {
