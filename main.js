@@ -16,6 +16,20 @@ function initAudio(element){
     //Create a New Audio Object
     audio = new Audio('media/' + song);
 
+    //Go to next song when song ended
+    $(this)[0].addEventListener("ended", function(){
+         audio.pause();
+         var next = $('#playlist li.active').next();
+         if (next.length == 0) {
+             next = $('#playlist li:first-child');
+         }
+         initAudio(next);
+         audio.play();
+         $('#play').hide();
+         $('#pause').show();
+         showDuration();
+    });
+
     if(!audio.currentTime){
         $('#current-duration').html('0:00');
 
@@ -30,6 +44,8 @@ function initAudio(element){
     $('#playlist li').removeClass('active');
     element.addClass('active');
 }
+
+
 
 
 
@@ -75,8 +91,18 @@ $('#next').click(function(){
     showDuration();
 });
 
-//Prev Button - to go to previous song
+//Prev Button - to restart the song
 $('#prev').click(function(){
+  audio.currentTime = 0;
+  $('#n-pause, #pause').hide();
+  $('#n-play, #play').show();
+  $('#duration').fadeOut(400);
+  $('#play').hide();
+  $('#pause').show();
+});
+
+//Prev Button - to go to previous song
+$('#prev').dblclick(function(){
     audio.pause();
     var prev = $('#playlist li.active').prev();
     if (prev.length == 0) {
