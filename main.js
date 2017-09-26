@@ -8,6 +8,8 @@ $(document).ready( function(){
         //Initializer - Play First Song
     initAudio($('#playlist li:first-child'));
 
+    initAudio.preload="auto";
+
     function initAudio(element){
         var song = element.attr('song');
         var title = element.text();
@@ -44,7 +46,21 @@ $(document).ready( function(){
 
         $('#playlist li').removeClass('active');
         element.addClass('active');
+
+        $('#repeat').removeClass("active");
     }
+
+    
+    //loop button
+    $('#repeat').click(function(){
+        if (audio.loop == true) {
+            audio.loop = false;
+            $('#repeat').removeClass('active');
+        } else {
+            audio.loop = true;
+            $('#repeat').addClass('active');
+        }
+    });
 
     //Play Button
     $('#play').click(function(){
@@ -54,6 +70,7 @@ $(document).ready( function(){
         $('#current-duration').fadeIn(400);
         showBuff();
         showDuration();
+        
     });
 
     //Pause Button
@@ -147,26 +164,31 @@ $(document).ready( function(){
             if (s < 10) {
                 s = '0' + s;
             }
-        if (ds < 10) {
+            if (ds < 10) {
                 ds = '0' + ds;
             }
+            //show current time
             $('#current-duration').html(m + ':' + s);
+            //show total time
+            $('#total-duration').html(dm + ':' + ds);
+            //duration progressbar
             var value = 0;
             if (audio.currentTime > 0) {
                 value = Math.floor((100 / audio.duration) * audio.currentTime);
             }
-        $('#total-duration').html(dm + ':' + ds);
             $('#player-seekduration').css('width',value+'%');
+            //duration seek
         });
     }
 
     function showBuff(){
-    $(audio).bind('progress', function(){
-        if (audio.buffered > 0) {
-        buffValue = Math.floor((100 / audio.duration) * audio.buffered);
-        }
-        $('#player-progressduration').css('width',buffValue+'%');
-    });
+        $(audio).bind('loadeddata', function(){
+            var value = 0;
+            if (audio.buffered > 0) {
+            buffValue = Math.floor(100 / audio.buffered);
+            }
+            $('#player-progressduration').css('width',value+'%');
+        });
     }
 
 });

@@ -25,13 +25,14 @@ body{
     margin: 5% 10% 5% 10%;
 }
 
-/*.promo{
+.promo{
     position: absolute;
     z-index: 1;
-    height: 131px;
+    height: 10%;
     width: 80%;
     margin: 5% 10% 5% 10%;
-}*/
+    background: black;
+}
 
 .player-seekbar{
     position: relative;
@@ -45,8 +46,10 @@ body{
     content: '';
     display: inline-block;
     height: 3px;
-    background: #474747;
+    background: #919191;
     margin-top: 2px;
+    z-index: 1;
+    width: 50%;
 }
 
 .player-seekduration{
@@ -56,6 +59,7 @@ body{
     height: 3px;
     background: #000397;
     margin-top: 2px;
+    z-index: 2;
 }
 
 /*.player-knot{
@@ -179,6 +183,25 @@ body{
     color: #ffffff;
 }
 
+.song-menu {
+    display: flex;
+    justify-content: space-around;
+    flex: 1;
+}
+
+.song-menu #playlist-button {
+    font-size: 21px;
+    margin-left: 15px;
+    margin-bottom: 20px;
+}
+
+.song-menu #menu-button {
+    font-size: 21px;
+    margin-right: 15px;
+    margin-bottom: 20px;
+}
+
+
 /*.fa:hover{
     color: #6F6AA5;
 }*/
@@ -215,6 +238,11 @@ body{
 #playlist li.active {
     font-weight: bold;
 	color:#6F6AA5;
+}
+
+#repeat.active {
+    font-weight: bold;
+    color:#6F6AA5;
 }
 
 #ads-list{
