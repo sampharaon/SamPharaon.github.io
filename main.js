@@ -4,7 +4,6 @@ var ads;
 //Hide Pause Initially
 $('#pause').hide();
 
-$(document).ready( function(){
         //Initializer - Play First Song
     initAudio($('#playlist li:first-child'));
 
@@ -35,7 +34,7 @@ $(document).ready( function(){
 
         if(!audio.currentTime){
             $('#current-duration').html('0:00');
-
+            $('#total-duration').html('0:00');
         }
 
         $('.album-info .title').text(title);
@@ -48,6 +47,27 @@ $(document).ready( function(){
         element.addClass('active');
 
         $('#repeat').removeClass("active");
+
+        function updateLoadProgress() {
+            var percent = 0;
+            if (audio.buffered.length > 0) {
+                percent = Math.floor(audio.buffered.end(0) / audio.duration) * 100;
+            }
+            $('#player-progressduration').css('width', percent + '%');
+        }
+
+        $(audio).bind('progress', function () {
+            updateLoadProgress()
+        });
+        $(audio).bind('loadeddata', function () {
+            updateLoadProgress()
+        });
+        $(audio).bind('canplaythrough', function () {
+            updateLoadProgress()
+        });
+        $(audio).bind('playing', function () {
+            updateLoadProgress()
+        });
     }
 
     
@@ -68,9 +88,8 @@ $(document).ready( function(){
         $('#play').hide();
         $('#pause').show();
         $('#current-duration').fadeIn(400);
-        showBuff();
         showDuration();
-        
+        showBuff();
     });
 
     //Pause Button
@@ -79,17 +98,6 @@ $(document).ready( function(){
         $('#pause').hide();
         $('#play').show();
     });
-
-    //stop Button
-    //$('#stop').click(function(){
-    //   audio.pause();
-    //  audio.currentTime = 0;
-    //  $('#n-pause, #pause').hide();
-    //  $('#n-play, #play').show();
-    //  $('#duration').fadeOut(400);
-    //  $('#play').hide();
-    //  $('#pause').show();
-    //});
 
     //Next Button
     $('#next').click(function(){
@@ -182,13 +190,7 @@ $(document).ready( function(){
     }
 
     function showBuff(){
-        $(audio).bind('loadeddata', function(){
-            var value = 0;
-            if (audio.buffered > 0) {
-            buffValue = Math.floor(100 / audio.buffered);
-            }
-            $('#player-progressduration').css('width',value+'%');
+        $(audio).bind('progress', function(){
+            updateLoadProgress()
         });
     }
-
-});

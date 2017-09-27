@@ -43,19 +43,14 @@ body{
 
 .player-progressduration{
     position: absolute;
-    content: '';
-    display: inline-block;
     height: 3px;
     background: #919191;
     margin-top: 2px;
     z-index: 1;
-    width: 50%;
 }
 
 .player-seekduration{
     position: absolute;
-    content: '';
-    display: inline-block;
     height: 3px;
     background: #000397;
     margin-top: 2px;
