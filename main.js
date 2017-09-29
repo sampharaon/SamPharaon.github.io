@@ -4,6 +4,7 @@ var ads;
 //Hide Pause Initially
 $('#pause').hide();
 
+
         //Initializer - Play First Song
     initAudio($('#playlist li:first-child'));
 
@@ -35,8 +36,6 @@ $('#pause').hide();
         element.addClass('active');
 
         $('#repeat').removeClass("active");
-
-        audio.addEventListener('onended', alert("Song end"));
     }
 
 
