@@ -47,30 +47,11 @@ $('#pause').hide();
         element.addClass('active');
 
         $('#repeat').removeClass("active");
-
-        function updateLoadProgress() {
-            var percent = 0;
-            if (audio.buffered.length > 0) {
-                percent = Math.floor(audio.buffered.end(0) / audio.duration) * 100;
-            }
-            $('#player-progressduration').css('width', percent + '%');
-        }
-
-        $(audio).bind('progress', function () {
-            updateLoadProgress()
-        });
-        $(audio).bind('loadeddata', function () {
-            updateLoadProgress()
-        });
-        $(audio).bind('canplaythrough', function () {
-            updateLoadProgress()
-        });
-        $(audio).bind('playing', function () {
-            updateLoadProgress()
-        });
     }
 
-    
+
+
+    //button controls============================================================================================
     //loop button
     $('#repeat').click(function(){
         if (audio.loop == true) {
@@ -86,6 +67,7 @@ $('#pause').hide();
     $('#play').click(function(){
         audio.load();
         audio.play();
+        updateLoadProgress()
         $('#play').hide();
         $('#pause').show();
         $('#current-duration').fadeIn(400);
@@ -108,7 +90,9 @@ $('#pause').hide();
             next = $('#playlist li:first-child');
         }
         initAudio(next);
+        audio.load();
         audio.play();
+        updateLoadProgress()
         $('#play').hide();
         $('#pause').show();
         showDuration();
@@ -123,7 +107,9 @@ $('#pause').hide();
                 prev = $('#playlist li:last-child');
             }
             initAudio(prev);
+            audio.load();
             audio.play();
+            updateLoadProgress()
             $('#play').hide();
             $('#pause').show();
             showDuration();
@@ -144,7 +130,9 @@ $('#pause').hide();
             prev = $('#playlist li:last-child');
         }
         initAudio(prev);
+        audio.load();
         audio.play();
+        updateLoadProgress()
         $('#play').hide();
         $('#pause').show();
         showDuration();
@@ -157,11 +145,13 @@ $('#pause').hide();
         $('#play').hide();
         $('#pause').show();
         $('#current-duration').fadeIn(400);
+        audio.load();
         audio.play();
+        updateLoadProgress()
         showDuration();
     });
 
-    //Time Duration
+    //Time Duration========================================================================================
     function showDuration(){
         $(audio).bind('timeupdate', function(){
             //Get hours and minutes
@@ -189,9 +179,61 @@ $('#pause').hide();
             //duration seek
         });
     }
+    
+    //load progress bar=================================================================================
+
+    function updateLoadProgress() {
+        var percent = 0;
+        if (audio.buffered.length > 0) {
+            percent = Math.floor(audio.buffered.end(0) / audio.duration) * 100;
+        }
+        $('#player-progressduration').css('width', percent + '%');
+    }
+
+    $(audio).bind('progress', function () {
+        updateLoadProgress()
+    });
+    $(audio).bind('loadeddata', function () {
+        updateLoadProgress()
+    });
+    $(audio).bind('canplaythrough', function () {
+        updateLoadProgress()
+    });
+    $(audio).bind('playing', function () {
+        updateLoadProgress()
+    });
+    $(audio).bind('onplaying', function () {
+        updateLoadProgress()
+    });
+    $(audio).bind('onload', function () {
+        updateLoadProgress()
+    });
+    $(audio).bind('onprogress', function () {
+        updateLoadProgress()
+    });
 
     //function showBuff(){
     //    $(audio).bind('progress', function(){
     //        updateLoadProgress();
     //    });
     //}
+
+
+    // playlist that appears through a modal ===============================================================
+
+    var modal = document.getElementById('simplemodal');
+    var modalBtn = document.getElementById('playlist-button');
+    var closebtn = document.getElementsByClassName('closebtn')[0];
+
+    modalBtn.addEventListener('click', openModal);
+    closebtn.addEventListener('click', closeModal);
+
+    function openModal() {
+        modal.style.display = 'block';
+    }
+
+
+
+    function closeModal() {
+        modal.style.display = 'none';
+    }
