@@ -14,23 +14,10 @@ $('#pause').hide();
         var title = element.text();
         var cover = element.attr('cover');
         var artist = element.attr('artist');
+        var lyric = element.attr('Lyric');
 
         //Create a New Audio Object
         audio = new Audio('media/' + song);
-
-        //Go to next song when song ended
-        $(this)[0].addEventListener("ended", function(){
-            audio.pause();
-            var next = $('#playlist li.active').next();
-            if (next.length == 0) {
-                next = $('#playlist li:first-child');
-            }
-            initAudio(next);
-            audio.play();
-            $('#play').hide();
-            $('#pause').show();
-            showDuration();
-        });
 
         if(!audio.currentTime){
             $('#current-duration').html('0:00');
@@ -42,11 +29,14 @@ $('#pause').hide();
 
         //Insert Cover Image
         $('img.cover').attr('src','media/Covers/' + cover);
+        $('div.lyric-modal-content').attr('load','media/lyrics/' + lyric);
 
         $('#playlist li').removeClass('active');
         element.addClass('active');
 
         $('#repeat').removeClass("active");
+
+        audio.addEventListener('onended', alert("Song end"));
     }
 
 
@@ -151,6 +141,7 @@ $('#pause').hide();
         showDuration();
     });
 
+
     //Time Duration========================================================================================
     function showDuration(){
         $(audio).bind('timeupdate', function(){
@@ -232,8 +223,38 @@ $('#pause').hide();
         modal.style.display = 'block';
     }
 
-
-
     function closeModal() {
         modal.style.display = 'none';
     }
+
+    // Lyrics that appears through a modal ==================================================================
+
+    var lyricModal = document.getElementById('lyricmodal');
+    var lyricModalBtn = document.getElementById('menu-button');
+    var lyricClosebtn = document.getElementsByClassName('lyric-closebtn')[0];
+
+    lyricModalBtn.addEventListener('click', openLyricModal);
+    lyricClosebtn.addEventListener('click', closeLyricModal);
+
+    function openLyricModal() {
+        lyricModal.style.display = 'block';
+    }
+
+    function closeLyricModal() {
+        lyricModal.style.display = 'none';
+    }
+
+    //play next song when song ends==============================================================================
+    
+    //$(audio)[0].addEventListener("ended", function () {
+    //    audio.pause();
+    //    var next = $('#playlist li.active').next();
+    //    if (next.length == 0) {
+    //        next = $('#playlist li:first-child');
+    //    }
+    //    initAudio(next);
+    //    audio.play();
+    //    $('#play').hide();
+    //    $('#pause').show();
+    //    showDuration();
+    //});

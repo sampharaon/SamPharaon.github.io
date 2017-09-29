@@ -17,6 +17,7 @@ body{
     background-color: #1A1A1A;
 }
 
+/*album cover==========================================================================================*/
 .cover{
     position: relative;
     width: 80%;
@@ -34,6 +35,7 @@ body{
     background: blue;
 }
 
+/*seekbar==============================================================================================*/
 .player-seekbar{
     position: relative;
     height: 7px;
@@ -71,6 +73,7 @@ body{
     box-shadow: 3px 2px 5px rgba(0,0,0,0.3);
 }*/
 
+/*song artist & duration info=======================================================================*/
 .album-info{
     position: relative;
     overflow: hidden;
@@ -112,6 +115,7 @@ body{
     padding: 5px 10px 0 0;
 }
 
+/*song controls=================================================================================*/
 .song-controls{
     padding: 15px 15px;
     overflow: auto;
@@ -172,6 +176,10 @@ body{
     margin-top: 4px;
 }
 
+#repeat.active {
+    font-weight: bold;
+    color: #6F6AA5;
+}
 
 #random, #repeat{
     position: relative;
@@ -201,6 +209,7 @@ body{
     color: #6F6AA5;
 }*/
 
+/*playlist modal==============================================================================================*/
 .closebtn {
     position: relative;
     color: #cccccc;
@@ -229,23 +238,18 @@ body{
     
 }
 
+  #playlist li {
+      cursor: pointer;
+      text-align: center;
+      padding: 10px 10px;
+  }
+
 #playlist li:nth-child(even){
     background: rgba(20, 20, 20, 0.75);
 }
 
 #playlist li:nth-child(odd){
     background: rgba(34, 34, 34, 0.75);
-}
-
-#playlist li {
-    cursor: pointer;
-    text-align: center;
-    padding: 10px 10px;
-}
-
-#playlist li:hover{
-    color: #6F6AA5;
-    text-shadow: 10px rgba(0,0,0,0.7);
 }
 
 #playlist li.active {
@@ -258,11 +262,25 @@ body{
     to {opacity: 1};
 }
 
-#repeat.active {
-    font-weight: bold;
-    color:#6F6AA5;
+/*lyric modal===================================================================================================*/
+
+.lyric-closebtn {
+    position: relative;
+    color: #cccccc;
+    float: bottom right;
+    font-size: 30px;
+    animation: modalclose;
+    animation-duration: 1s;
 }
 
+.lyric-closebtn:hover,
+.lyric-closebtn:focus {
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*other stuff===================================================================================================*/
 #ads-list{
     display: none;
 }
@@ -270,7 +288,7 @@ body{
 
 
 
-/* for smaller displays */
+/* for smaller displays ====================================================================================*/
 
 @media only screen and (max-width: 700px) {
     #playlist{
@@ -362,4 +380,11 @@ body{
         animation-duration: .5s;
     }
 
+}
+
+@media only screen and (min-width: 700px) {
+    #playlist li:hover {
+        color: #6F6AA5;
+        text-shadow: 10px rgba(0, 0, 0, 0.7);
+    }
 }
