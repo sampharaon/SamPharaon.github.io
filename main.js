@@ -273,7 +273,7 @@ function closeLyricModal() {
     lyricModal.style.display = 'none';
 }
 
-document.getElementsByClassName("lyric-modal-content").innerHTML = "\media\Lyrics\Ultralight Beam.html";
+document.getElementById("lyric-modal-content").innerHTML = UltralightBeam;
 
 //play next song when song ends==============================================================================
 

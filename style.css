@@ -269,7 +269,7 @@ body{
 .lyric-closebtn {
     position: relative;
     color: #cccccc;
-    float: bottom right;
+    float: top;
     font-size: 30px;
     animation: modalclose;
     animation-duration: 1s;
@@ -282,9 +282,14 @@ body{
     cursor: pointer;
 }
 
+#lyric-modal-contents{
+    color: #cccccc;
+}
+
 #lyric-modal-content{
     text-align: center;
-    color: #cccccc;
+    margin-top: 10px;
+    font-size: 14px;
 }
 /*other stuff===================================================================================================*/
 #ads-list{
