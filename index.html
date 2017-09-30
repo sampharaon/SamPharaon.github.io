@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Music Player</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Music Player</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    </head>
     <body>
+        <!--===========================container to hold the media player===============================-->
         <div class="container">
+            <!--=======================the media player div=============================================-->
             <div class="player">
+                <!--===================the album art and ad art div=====================================-->
                 <div class="player-art">
-                    <div class="promo"></div>
+                    <div class="promo-img">
+                        <img class="promo"src="media\Ads\YourAd.jpg">
+                    </div>
                     <div class="album-img">
-                        
-                        <!--<img class="promo" src="media/Ads/ad.jpg">-->
                         <img class="cover">
                     </div>
                 </div>
+                <!--====================the media seek bar & info divs==================================-->
                 <div class="album-info">
                     <div class="player-seekbar" id="player-seekbar">
                         <span class="player-progressduration" id="player-progressduration"></span>
@@ -35,6 +39,7 @@
                         title
                     </span>
                 </div>
+                <!--====================the media controls divs=========================================-->
                 <div class="song-controls">
                     <i id="random" class="fa fa-random"></i>
                     <i id="prev" class="fa fa-backward"></i>
@@ -48,7 +53,7 @@
                     <i id="menu-button" class="fa fa-ellipsis-h"></i>
                 </div>
             </div>
-
+            <!--========================the playlist modal div==========================================-->
             <div id="simplemodal" class="modal">
                 <div id="modal-content">
                     <span class="closebtn">&times;</span>
@@ -77,25 +82,25 @@
                     </div>
                 </div>
             </div>
-
+            <!--========================the lyric modal and menu divs===================================-->
             <div id="lyricmodal" class="modal">
                 <div id="lyric-modal-content">
                     <span class="lyric-closebtn">&times;</span>
-                    <div class="lyric-modal-content"></div>
+                    <p class="lyric-modal-content">lyric</p>
                 </div>
             </div>
-            <div id="ads-list">
-                <li ads="Alan Cave Promo.mp3" ad="ad.jpg"></li>
-                <li ads="Dr. Resil Promo.mp3" ad="ad.jpg"></li>
-                <li ads="Six Flags Promo.mp3" ad="ad.jpg"></li>
-                <li ads="Sommet Arts and Media Promo.mp3" ad="ad.jpg"></li>
-                <li ads="Supreme Pizza Promo.mp3" ad="ad.jpg"></li>
-            </div>
         </div>
-
+        <!--===========================ad media !ad art div=============================================-->
+        <div id="ads-list">
+            <audio ads="Alan Cave Promo.mp3" ad="ad.jpg"></audio>
+            <audio ads="Dr. Resil Promo.mp3" ad="ad.jpg"></audio>
+            <audio ads="Six Flags Promo.mp3" ad="ad.jpg"></audio>
+            <audio ads="Sommet Arts and Media Promo.mp3" ad="ad.jpg"></audio>
+            <audio ads="Supreme Pizza Promo.mp3" ad="ad.jpg"></audio>
+        </div>
+        <!--===========================scripts==========================================================-->
         <script src="jquery.js"></script>
         <script src="main.js"></script>
-
 
     </body>
 </html>

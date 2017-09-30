@@ -15,6 +15,7 @@ body{
     width: 512.25px;
     overflow: hidden;
     background-color: #1A1A1A;
+    box-shadow: inset 10px rgba(0, 0, 0, 0.9);
 }
 
 /*album cover==========================================================================================*/
@@ -33,6 +34,7 @@ body{
     width: 80%;
     margin: 5% 10% 5% 10%;
     background: blue;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.9) inset 3px 2px 5px rgba(0, 0, 0, 0.9);
 }
 
 /*seekbar==============================================================================================*/
@@ -280,6 +282,10 @@ body{
     cursor: pointer;
 }
 
+#lyric-modal-content{
+    text-align: center;
+    color: #cccccc;
+}
 /*other stuff===================================================================================================*/
 #ads-list{
     display: none;
