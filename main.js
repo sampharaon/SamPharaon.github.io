@@ -289,3 +289,6 @@ document.getElementById("lyric-modal-content").innerHTML = UltralightBeam;
 //    $('#pause').show();
 //    showDuration();
 //});
+
+// play ad on click===========================================================================================
+

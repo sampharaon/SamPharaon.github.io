@@ -223,7 +223,7 @@ body{
 
 .closebtn:hover,
 .closebtn:focus {
-    color: #000000;
+    color: #6F6AA5;
     text-decoration: none;
     cursor: pointer;
 }
@@ -277,7 +277,7 @@ body{
 
 .lyric-closebtn:hover,
 .lyric-closebtn:focus {
-    color: #000000;
+    color: #6F6AA5;
     text-decoration: none;
     cursor: pointer;
 }
